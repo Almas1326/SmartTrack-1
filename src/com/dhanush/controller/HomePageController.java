@@ -10,8 +10,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
-
-import com.dhanush.domain.EquipmentMaster;
 import com.dhanush.domain.EquipmentType;
 import com.dhanush.domain.Facility;
 import com.dhanush.domain.User;
@@ -65,17 +63,6 @@ System.out.println("Equipment Type List: " +userList.get(0).getNAME());
 			System.out.println("Insert request invoked2");
 		return "redirect:/getList";
 	}
-	
-	
-	@RequestMapping("/inserts")
-	public String insertEquipment(@ModelAttribute EquipmentMaster em) {
-		System.out.println("1");
-		System.out.println("test: "+em.getEquipment_Name());
-		if (em != null)
-			userService.insertEquipment(em);
-		return "redirect:/getList";
-	}
-	
 
 @RequestMapping("/getList")
 	public ModelAndView getUserLIst() {
@@ -112,19 +99,19 @@ System.out.println("Equipment Type List: " +userList.get(0).getNAME());
 
 	}
 
-	@RequestMapping("/update")
+	/*@RequestMapping("/update")
 	public String updateUser(@ModelAttribute User user) {
 		userService.updateData(user);
 		return "redirect:/getList";
 
-	}
+	}*/
 
-	@RequestMapping("/delete")
+	/*@RequestMapping("/delete")
 	public String deleteUser(@RequestParam String id) {
 		System.out.println("id = " + id);
 		userService.deleteData(id);
 		return "redirect:/getList";
-	}
+	}*/
 	
 	
 }
