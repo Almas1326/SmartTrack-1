@@ -6,8 +6,6 @@ import java.util.List;
 import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
-
-import com.dhanush.domain.EquipmentMaster;
 import com.dhanush.domain.EquipmentType;
 import com.dhanush.domain.Facility;
 import com.dhanush.domain.User;
@@ -64,27 +62,15 @@ public class UserDaoImpl implements UserDao {
 		
 	}
 
-	@Override
+/*	@Override
 	public void deleteData(String id) {
 		String sql = "delete from user where user_id=" + id;
 		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
 		jdbcTemplate.update(sql);
 
-	}
-
-	/*@Override
-	public void updateData(User user) {
-
-		String sql = "UPDATE user set first_name = ?,last_name = ?, gender = ?, city = ? where user_id = ?";
-		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
-
-		jdbcTemplate.update(
-				sql,
-				new Object[] { user.getFirstName(), user.getLastName(),
-						user.getGender(), user.getCity(), user.getUserId() });
-
 	}*/
-	//retrive data from euipment master
+
+	
 
 	@Override
 	public User getUser(String id) {
@@ -106,25 +92,6 @@ public class UserDaoImpl implements UserDao {
 		return userList;
 	}
 
-	
-//method to insert data in to equipment master
-	@Override
-	public void insertEquipment(EquipmentMaster em) {
-		System.out.println("entering in to query"+em);
-		String sql = "INSERT INTO Equipment_Master"
-				+ "( Equipment_Id,Equipment_Type_Name,Equipment_Name,S_NO,Reg_No,Description,Start_Date,End_Date,Facility_Name) VALUES (?,?,?,?,?,?,?,?,?)";
-		
-		em.setEquipment_Type_Name("testOne");
-			
-		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
-
-		jdbcTemplate.update(
-				sql,
-				new Object[] { em.getEquipment_Id(),em.getEquipment_Type_Name(), em.getEquipment_Name(),
-						em.getS_NO(),em.getReg_No(), em.getDescription(),em.getStart_Date(),em.getEnd_Date(),em.getFacility_Name()});
-		
-	}
-
 	@Override
 	public List<Facility> getFacilityMasterList() {
 		List facilityList = new ArrayList();
@@ -137,10 +104,10 @@ public class UserDaoImpl implements UserDao {
 
 	}
 
-	@Override
+	/*@Override
 	public void updateData(User user) {
 		// TODO Auto-generated method stub
 		
-	}
+	}*/
 
 }
