@@ -10,7 +10,6 @@ public interface UserDao {
 
 	public List<User> getUserList();
 
-	
 	//public void updateData(User user);
 
 	//public void deleteData(String id);
